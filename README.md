@@ -4,6 +4,8 @@ This program generates a control flow graph of a given Java method.
 
 It uses Apache BCEL to parse Java Bytecode files.
 
+Author: Andreas Fuchs
+
 ## Setup and Usage
 
 Clone from GitHub repository:
@@ -61,11 +63,11 @@ In order to run the program, you must be in the `j2g` folder.
 You can run the program with the following command:
 
 ```bash
-& mvn exec:java -Dexec.mainClass="j2g.Main" -Dexec.args="-c your.Class -mn yourMethodName -ms ()V -o /your/output/directory"
+$ mvn exec:java -Dexec.mainClass="j2g.Main" -Dexec.args="-c your.Class -mn yourMethodName -ms ()V -o /your/output/directory"
 ```
 
 For example, to generate an output to `C:/_J2G/output` for the method `equals` with the signature `(Ljava/lang/Object;)Z` of the class `java.lang.String`, you run:
 
 ```bash
-& mvn exec:java -Dexec.mainClass="j2g.Main" -Dexec.args="-c java.lang.String -mn equals -ms (Ljava/lang/Object;)Z -o C:/_J2G/output"
+$ mvn exec:java -Dexec.mainClass="j2g.Main" -Dexec.args="-c java.lang.String -mn equals -ms (Ljava/lang/Object;)Z -o C:/_J2G/output"
 ```
