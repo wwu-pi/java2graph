@@ -13,6 +13,8 @@ public class PajekFormatter {
 
 	private Graph graph;
 	
+	private final String END_NODE_NAME = "-1";
+	
 	public PajekFormatter(Graph graph) {
 		this.graph = graph;
 	}
@@ -20,21 +22,21 @@ public class PajekFormatter {
 	public StringBuilder getNodes() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("* Vertices " + (graph.getNodes().size()+1) + "\n");
-		for(Node n : graph.getNodes()) {
-			sb.append(n.getID() + " \"node for instruction handle: " + n.getIh() +"\"\n");
+		for(Node n : graph.getSortedNodes()) {
+			sb.append(n.getExternalID() + " \"node for instruction handle: " + n.getIh() +"\"\n");
 		}
-		sb.append("END \"the end node\"\n");
+		sb.append(END_NODE_NAME + "\"the end node\"\n");
 		return sb;
 	}
 	
 	public StringBuilder getEdges() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("* arcs " + graph.getEdges().size() + "\n");
+		sb.append("* Arcs " + graph.getEdges().size() + "\n");
 		for(Edge e : graph.getEdges()) {
 			if(e.getTo() == null) {
-				sb.append(e.getFrom().getID() + " END \n");
+				sb.append(e.getFrom().getExternalID() + " " + END_NODE_NAME + " \n");
 			} else {
-				sb.append(e.getFrom().getID() + " " + e.getTo().getID() + "\n");
+				sb.append(e.getFrom().getExternalID() + " " + e.getTo().getExternalID() + "\n");
 			}
 		}
 		return sb;
