@@ -170,8 +170,8 @@ public class Main {
 	}
 	
 	private static void writeGraph(Graph g, File outputDirectory) {
-		Path graphNodesFilePath = Paths.get(outputDirectory.getAbsolutePath(), "nodes.txt");
-		Path graphEdgesFilePath = Paths.get(outputDirectory.getAbsolutePath(), "edges.txt");
+		Path graphNodesFilePath = Paths.get(outputDirectory.getAbsolutePath(), "nodes.net");
+		Path graphEdgesFilePath = Paths.get(outputDirectory.getAbsolutePath(), "edges.net");
 		
 		PajekFormatter pajek = new PajekFormatter(g);
 		
