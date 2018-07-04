@@ -56,6 +56,31 @@ For example, to find it for all `java.lang.String` methods:
 javap -v -c java.lang.String
 ```
 
+You will get something like this:
+
+```bash
+public static java.lang.String valueOf(java.lang.Object);
+    descriptor: (Ljava/lang/Object;)Ljava/lang/String;
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: ifnonnull     9
+         4: ldc           #12                 
+         6: goto          13
+         9: aload_0
+        10: invokevirtual #459                
+        13: areturn
+      StackMapTable: number_of_entries = 2
+        frame_type = 9 /* same */
+        frame_type = 67 /* same_locals_1_stack_item */
+          stack = [ class java/lang/String ]
+      LineNumberTable:
+        line 2994: 0
+```
+
+Then the method signature of the method named `valueOf` with a single parameter of type `java.lang.Object` is given in `descriptor` with `(Ljava/lang/Object;)Ljava/lang/String;`
+
 ## Run the Program
 
 In order to run the program, you must be in the `j2g` folder.
