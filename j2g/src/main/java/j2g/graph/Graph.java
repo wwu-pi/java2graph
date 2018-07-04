@@ -1,5 +1,7 @@
 package j2g.graph;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,6 +30,12 @@ public class Graph {
 		if(e.getFrom() != null) this.nodes.add(e.getFrom());
 		if(e.getTo() != null) this.nodes.add(e.getTo());
 		this.edges.add(e);
+	}
+	
+	public List<Node> getSortedNodes() {
+		List<Node> sortedList = new ArrayList<Node>(this.nodes);
+		Collections.sort(sortedList);
+		return sortedList;
 	}
 	
 	public Set<Node> getNodes() {
