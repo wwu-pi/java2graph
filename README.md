@@ -71,3 +71,14 @@ For example, to generate an output to `C:/_J2G/output` for the method `equals` w
 ```bash
 $ mvn exec:java -Dexec.mainClass="j2g.Main" -Dexec.args="-c java.lang.String -mn equals -ms (Ljava/lang/Object;)Z -o C:/_J2G/output"
 ```
+
+
+## Eclipse Project Import
+
+The project can be imported into Eclipse using the following steps:
+
+(1) Clone from repository as explained above.
+(2) In Eclipse Menu: `File -> Import...`
+(3) In Import Wizard select: `General -> Existing Projects into Workspace` and click `Next`
+(4) In Import WIzard `Select root directory`: specify path where you have cloned the repository to (you might have to select option `Search for nested projects`)
+(5) Click `Finish`
